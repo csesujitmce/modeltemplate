@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% extends "myapp/base.html" %}
+{% load static %}
+{% block title_block %}
+    <title>List Movie</title>
+{% endblock  %}
+
+{% block body_block %}
+    {% load cust_filter %}
+    <div class="container continer-table" align="center">
+        <h1>Contribute to Movie Lovers</h1>
+        <hr>
+        {% if movie_list %}
+            <table class="table table-striped-columns">
+                <thead class="table-dark">
+                    <th>Movie Name</th>
+                    <th>Hero</th>
+                    <th>Heroin</th>
+                    <th>Release Date</th>
+                    <th>Rating</th>
+                </thead>
+                {% for movie in movie_list %}
+                <tr>
+                    <td>{{movie.moviename|f5u}}</td>
+                    <td>{{movie.hero}}</td>
+                    <td>{{movie.heroien}}</td>
+                    <td>{{movie.releasedate|timesince}}</td>
+                    <td>{{movie.rating}}</td>
+                </tr>
+                {%endfor%}
+            </table>
+        {%else%}
+            <h2>No Record found !!</h2>
+        {%endif%}
+    </div>
+
+
+{% endblock  %}

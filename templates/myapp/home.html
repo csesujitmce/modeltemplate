@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% extends "myapp/base.html" %}
+{% load static %}
+{% block title_block %}
+    <title>{{page_title}}</title>
+{% endblock  %}
+
+
+{% block  body_block %}
+    <div class="container custom-container" align="center">
+        <div class="mt-4 p-5 text-white rounded custom-jumboo">
+            <h1>Welcome On AirTube Video and Audio Hub</h1>
+            <hr>
+            <p>Watch new Content and Contribute to Audio Video Lover!!! Thanks for your Support</p><br><br>
+            <a class="btn btn-primary btn-lg" role="button" href="{% url 'add'%}">Add Movie</a> &nbsp;&nbsp;
+            <a class="btn btn-primary btn-lg" href="{% url 'list'%}" >List All Movie</a>
+        </div>
+
+    </div>
+{% endblock  %}

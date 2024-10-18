@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% extends "myapp/base.html" %}
+{% load static %}
+{% block title_block %}
+    <title>Add Movie</title>
+{% endblock  %}
+
+{% block body_block %}
+
+    <div class="container continer-form" align="center">
+        {% if status %}
+            <h1>Thank you to add {{movie_name}} !!!</h1>
+            <hr>
+            <p>To More contribute Please Click on Add More Movie Button</p>
+            <a href="{% url 'add'%}" type="Button" class="btn btn-primary">Add More Movie</a>
+        {% else %}
+        <h1>Contribute to Movie Lovers</h1>
+        <hr>
+        <form action="" method="post">
+            {{form.as_p}}
+            {%csrf_token%}
+            <input class="btn btn-primary" type="submit" value="Add Movie">
+        </form>
+        {% endif%}
+    </div>
+
+
+{% endblock  %}
